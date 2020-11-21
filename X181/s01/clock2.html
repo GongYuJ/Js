@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			setInterval(function(){
+				var d = new Date();
+				myh1.innerText = d.toLocaleTimeString();
+			},1000);
+			
+			function myfn(){
+				//得到秒数+分钟*60
+				var seconds = parseInt(i3.value)+
+				parseInt(i2.value)*60+parseInt(i3.value)*3600;
+				//开启倒计时的定时器
+				var timeId = setInterval(function(){
+					seconds--;
+					//得到小时
+					var hours = parseInt(seconds/3600); 
+					i1.value = hours;
+					//得到分钟 seconds%3600得到抛去小时剩余的秒数
+					var minutes = parseInt((seconds%3600)/60);
+					i2.value = minutes;
+					//得到秒数
+					i3.value = seconds%60;
+					//如果时间到则停止定时器
+					if(seconds==0){
+						clearInterval(timeId);
+						alert("时间到!");
+					}
+				},100);
+		
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="myh1"></h1>
+		<input type="text" placeholder="小时" id="i1"/>
+		<input type="text" placeholder="分钟" id="i2"/>
+		<input type="text" placeholder="秒" id="i3"/>
+		<input type="button" value="开始倒计时" onclick="myfn()"/>
+	</body>
+</html>

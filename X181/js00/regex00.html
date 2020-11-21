@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//第一种创建正则的方式
+	//格式： 
+	// var a = /规则/模式 (i：忽略大小写 g:全局查找)
+	//以a小写开头的正则
+	 //命名规则  见名知意 驼峰命名法
+	var reg = /^a/i; 
+	//以m结尾
+	reg = /m$/; reg = /n$/;
+	reg1 = /b$/;
+	//只有3位数字 
+	reg = /^\d{3}$/;
+	 	//只有6位数字 
+		reg = /^\d{6}$/;
+	//只有6位数字字母下划线组成
+	reg = /^\w{6}$/;
+	//以x开头 y结尾中间有5位数字
+	reg = /^x\d{5}y$/;
+	//包含3到5位数字
+	//aaa1234dsvs123d
+	reg = /\d{3,5}/;
+	//由6-10位数字字母下划线组成
+	reg = /^\w{6,10}$/;
+	
+//#第二种创建正则的方式#, 第一个参数是规则，
+//第二个参数是模式（可省略）
+
+//  var reg2 = new RegExp("规则","模式");
+
+// 这种方式正则中的\ 需要转义,以后用第一种方式写就可以，第二种方式了解一下就可以 
+//由6-10位数字字母下划线组成
+	var reg2 = new RegExp("\\w{6,10}$");
+	
+// #和正则相关的方法#
+	//1.查找内容的方法exec(execute)类似我们电脑文件的后缀.exe文件 又叫做可执行文件
+	var str = "You can you up no can no b b";
+	var r = /no/g; //查找no 全局查找no
+	//这句话的意思是在str这个字符串中找no 由于这个方法比较弱
+	 alert(r.exec(str));
+	 //一次只能查找一个no所以我门要在写一个,就能找到第二个
+	 alert(r.exec(str));//no
+	 alert(r.exec(str));//null 找不到了 
+	
+	//校验文本
+	//校验这个字符串是不是you开头
+	//test 校验文本 test————测试
+	 var r2 = /^You/i;
+	 if(r2.test(str)){
+	 	alert("格式正确");
+	 }else{
+	 	alert("格式错误");
+	 }
+		 var str = "You can you up no can no b b";
+		var reg = /no/g;
+		//此方法一次性查询到是所有出现的内容 
+		//装在一个数组中返回
+		var arr = str.match(reg);
+		alert(arr);
+	
+		var reg = /no/g;
+		var string = str.replace(reg,"不");
+		alert(string);
+		
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

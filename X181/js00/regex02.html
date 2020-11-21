@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/* err 代表错误 */
+	.err{
+		color: red;
+	}
+	/* ok 代表正确 */
+	.ok{
+		color: green;
+	}
+</style>
+<script type="text/javascript">
+	// function myfn(){
+	// 	//准备正则对象,6-10位数字字母下划线组成
+	// 	var reg = /^\w{6,10}$/;
+	// //判断用户名是否符合规则
+	// 	if(reg.test(i1.value)){
+	// 		s1.className="ok";
+	// //格式错误 字体为红色
+	// 	}else{
+	// 		s1.className="err";
+	// 	} 
+	// //校验密码就把s1改成s2 i1改i2 就可以了
+	// 	if(reg.test(i2.value)){
+	// 		s2.className="ok";
+	// 	}else{
+	// 		s2.className="err";
+	// 	} 
+	// }
+	function usernamefn(){
+		var reg = /^\w{6,10}$/;
+		//校验用户名
+			if(reg.test(i1.value)){
+		//格式正确 颜色为绿色
+				s1.className="ok";
+		//格式错误 字体为红色
+			}else{
+				s1.className="err";
+			} 
+	}
+	
+	function passwordfn(){
+		var reg = /^\w{6,10}$/;
+		//校验密码
+			if(reg.test(i2.value)){
+		//格式正确 字体为绿色
+				s2.className="ok";
+		//格式错误 字体为红色
+			}else{
+				s2.className="err";
+			} 
+	}
+</script>
+</head>
+<body>
+	<!-- onblur 失去焦点事件 
+	当输入域失去焦点 (blur) 时生效,就是说我们输入用户名完成
+	的时候onblur失去焦点事件发生，不用再去单击校验按钮，
+	onclick是单击事件 onblur是鼠标光标离开你的输入域的时候发生
+	 
+	 -->
+用户名：<input type="text" 
+		placeholder="请输入用户名" id="i1" onblur="usernamefn()">
+<span id="s1">6-10位数字字母下划线组成</span>
+		<br>
+密码：<input type="password" 
+		placeholder="请输入密码" id="i2" onblur="passwordfn()">
+<span id="s2">6-10位数字字母下划线组成</span>	
+		<br>
+<!-- <input type="button" value="登录" >  -->
+</body>
+</html>
+
+

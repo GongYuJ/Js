@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//创建Person对象 有age和name属性
+	function Person(name,age){
+		//声明属性并赋值
+		this.name=name;
+		this.age=age;
+		//声明方法
+		this.run = function(){
+			alert("name:"+this.name
+					+" age:"+this.age);
+		}
+	}
+	//实例化对象
+	var p = new Person("刘德华",38);
+	//调用方法
+	p.run();
+	
+	/* 创建学生对象 name属性
+	和语chinese数math外english属性 再添加一个
+	study方法  
+	方法执行的时候alert出名字和语数外的值*/
+	
+	
+	
+	
+	
+	
+	
+	function Student(name,chinese,math,english){
+		this.name=name;
+		this.chinese=chinese;
+		this.math=math;
+		this.english=english;
+		this.study = function(){ 
+			alert("名字:"+this.name
+					+" 语文："+this.chinese
+					+" 数学："+this.math
+					+" 英语："+this.english);
+		}
+	}
+	var s = new Student("刘备",60,60,60);
+	s.study();
+	
+	//创建空的对象
+	function SuperMan(){}
+	var sMan = new SuperMan();
+	//创建对象之后添加属性和方法
+	sMan.name="克拉克";
+	sMan.fly = function(){
+		alert("我叫"+sMan.name+"我在飞！");
+	}
+	//调用对象的方法
+	sMan.fly();
+	//创建对象的第二种方式
+	var p1 = {
+			"name":"关羽",
+			"age":18,
+			"run":function(){
+				alert("姓名："+this.name
+						+"年龄："+this.age);
+			}
+	}
+	//调用方法
+	p1.run();
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

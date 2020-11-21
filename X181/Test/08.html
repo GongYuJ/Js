@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn1(){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var div = document.getElementById("d1");
+		div.innerText = parseFloat(i1.value)
+						+parseFloat(i2.value);
+	}
+	function fn2(){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var div = document.getElementById("d1");
+		div.innerText = parseFloat(i1.value)
+						-parseFloat(i2.value);
+	}
+	function fn3(){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var div = document.getElementById("d1");
+		div.innerText = parseFloat(i1.value)
+						*parseFloat(i2.value);
+	}
+	function fn4(){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var div = document.getElementById("d1");
+		div.innerText = parseFloat(i1.value)
+						/parseFloat(i2.value);
+	}
+	
+	function myfn(x){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var div = document.getElementById("d1");
+		var n1 = parseFloat(i1.value);
+		var n2 = parseFloat(i2.value);
+		var result = 0;
+		switch(x){
+			case 1://加
+				result=n1+n2;
+				break;
+			case 2://减
+				result=n1-n2;
+				break;
+			case 3://乘
+				result=n1*n2;
+				break;
+			case 4://除
+				result=n1/n2;
+				break;
+		}
+		div.innerText = result;
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="text" id="i2">
+<input type="button" value="+" onclick="myfn(1)"> 
+<input type="button" value="-" onclick="myfn(2)">
+<input type="button" value="*" onclick="myfn(3)">
+<input type="button" value="/" onclick="myfn(4)">
+<div id="d1"></div>
+</body>
+</html>
+
+
+

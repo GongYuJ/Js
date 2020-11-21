@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/* err 代表错误 */
+	.err{
+		color: red;
+	}
+	/* ok 代表正确 */
+	.ok{
+		color: green;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		//准备正则对象,6-10位数字字母下划线组成
+		var reg = /^\w{6,10}$/;
+	//判断用户名是否符合规则
+	//格式正确 字体为绿色 修改s1的class的值为ok
+		if(reg.test(i1.value)){
+	//s1.className="ok"; 这句话的意思就是说，
+	//在id为s1的span标签添加class
+	//并且把class的值赋值为ok 相当于
+	//<span id="s1" class="ok">6-10位数字字母下划线组成</span>
+			s1.className="ok";
+	//格式错误 字体为红色 
+		}else{
+			s1.className="err";
+		} 
+	//校验密码就把s1改成s2 i1改i2 就可以了
+		if(reg.test(i2.value)){
+			s2.className="ok";
+		}else{
+			s2.className="err";
+		} 
+	//下面是三目运算
+	
+		 s1.className=reg.test(i1.value)?"ok":"err";
+		 s2.className=reg.test(i2.value)?"ok":"err";
+	}
+</script>
+</head>
+<body>
+用户名：<input type="text" 
+		placeholder="请输入用户名" id="i1">
+<span id="s1" >6-10位数字字母下划线组成</span>
+		<br>
+密码：<input type="password"
+		placeholder="请输入密码" id="i2">
+<span id="s2">6-10位数字字母下划线组成</span>	
+		<br>
+<input type="button" value="校验" onclick="myfn()">
+</body>
+</html>
+
+
